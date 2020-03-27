@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="film: ${films}">
+    <p th:text="${film.getTitle()}"></p>
+    <p>-----------------------------</p>
+</tr>
+
+<form th:object="${newFilm}" th:action="@{/films}" method="POST">
+
+    <input th:field="*{Title}" value="text">
+    <input type="submit">
+</form>
+
+
+
+</body>
+</html>
